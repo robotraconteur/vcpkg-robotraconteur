@@ -8,16 +8,18 @@ endif()
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
 	REPO robotraconteur/robotraconteur
-	REF v0.9.3-vcpkg
-	SHA512 465dad7cacabd09d6bd6b01d6f2bc5be21f7d8be51536e5647935a65aa28165b74fc041b45c8d864f2918cbc3b2253e6c285dd76068d852dbf4be504886014fc
+	REF v0.10.0
+	SHA512 a0b93d2cce9fb7db999b0327802eb4dcf06c8613cac325d2cfc73c9de0f070cc038cddc482deb5d2164e6c72c4d9619ff4602a0055795d9165b86a0e307acb72
 	HEAD_REF master
+	PATCHES
+	  static-build.patch
 )
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
 	OPTIONS
 	    -DBUILD_GEN=ON
-		#-DRobotRaconteur_USE_SHARED_LIB=ON
+		-DBUILD_SHARED_LIBS=OFF
 )
 
 vcpkg_install_cmake()

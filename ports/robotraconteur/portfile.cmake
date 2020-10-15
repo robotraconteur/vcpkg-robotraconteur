@@ -8,8 +8,8 @@ endif()
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
 	REPO robotraconteur/robotraconteur
-	REF v0.12.0
-	SHA512 77424501d7a8cb78a39f8f33a11ed007bb3ddeb8af9df69ae4a65584b5fcbab311edac75bdf2cecddc9a9ebe65d7645c094690f4429cbb38f6e97acc0d78c59f
+	REF v0.12.1
+	SHA512 36bb0a1bf17ecd480fa491d3295fdda6071433cc250144107c0ff91e376122389bad576bb20ebc28e7e9ff04e526a122b12744a2c9b83bc8bb17aa339f92c950
 	HEAD_REF master
 	PATCHES
 	  static-build.patch

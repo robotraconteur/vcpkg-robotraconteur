@@ -1,0 +1,36 @@
+name: Update vcpkg port
+
+on:
+  workflow_dispatch:
+    inputs:
+      port:
+        required: true
+        description: Port to update
+      source_repository:
+        required: true
+        description: Repository with source code
+      tag_name:
+        required: true
+        description: Name of release tag
+
+jobs:
+  update-port:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update Port
+      run: python3 scripts/update_port.py
+      env:
+        INPUT_TAG_NAME: ${{ github.event.inputs.tag_name }}
+        INPUT_PORT: ${{ github.event.inputs.port }}
+        INPUT_SOURCE_REPOSITORY: ${{ github.event.inputs.source_repository }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.BOT_GITHUB_TOKEN }}
+    
+      
+
+      
+      
+  

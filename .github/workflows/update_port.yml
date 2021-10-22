@@ -27,6 +27,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
+        title: Update port ${{ github.event.inputs.port }} to ${{ github.event.inputs.source_repository }} ${{ github.event.inputs.tag_name }}
         token: ${{ secrets.BOT_GITHUB_TOKEN }}
     
       

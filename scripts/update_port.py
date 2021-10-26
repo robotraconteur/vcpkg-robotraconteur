@@ -54,7 +54,7 @@ def main():
     print(tarball_sha512)
 
     
-    vcpkg_ver =  tag_name_r.group(1) + tag_name_r.group(2)
+    vcpkg_ver =  tag_name_r.group(1) + (tag_name_r.group(2) or "")
 
     vcpkg_json2 = re.sub(r'("version-semver"\s*\:\s*)"([^"]+)"', f'\\g<1>"{vcpkg_ver}"', vcpkg_json, count=1)
     print(vcpkg_json2)

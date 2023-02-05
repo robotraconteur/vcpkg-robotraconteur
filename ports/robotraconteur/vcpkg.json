@@ -32,6 +32,10 @@
         "boost-unordered",
         "boost-utility",
         "boost-uuid",
-        "boost-program-options"
+        "boost-program-options",
+        {
+            "name": "vcpkg-cmake",
+            "host": true
+        }
     ]
 }

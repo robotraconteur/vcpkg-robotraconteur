@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [ubuntu-latest]
     env:
       DEBIAN_FRONTEND: noninteractive
     steps:
@@ -42,7 +42,7 @@ jobs:
           vcpkg/buildtrees/*/*.txt
           vcpkg/buildtrees/*/*.log
   build-win:
-    runs-on: windows-2016
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
@@ -65,7 +65,7 @@ jobs:
           vcpkg/buildtrees/*/*.txt
           vcpkg/buildtrees/*/*.log
   build-osx:    
-    runs-on: macos-10.15
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
       with:

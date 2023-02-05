@@ -1,6 +1,6 @@
 {
     "name": "robotraconteur",
-    "version-semver": "0.15.4",
+    "version-semver": "0.16.0",
     "homepage": "http://robotraconteur.com",
     "description": "The Robot Raconteur communication framework core library",
     "dependencies": [
@@ -32,6 +32,14 @@
         "boost-unordered",
         "boost-utility",
         "boost-uuid",
-        "boost-program-options"
+        "boost-program-options",
+        {
+            "name": "vcpkg-cmake",
+            "host": true
+        },
+        {
+            "name": "openssl",
+            "platform": "!windows"
+        }
     ]
 }

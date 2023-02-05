@@ -17,7 +17,8 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
 	OPTIONS
 	    -DBUILD_GEN=ON
-		-DBUILD_SHARED_LIBS=OFF
+	    -DBUILD_SHARED_LIBS=OFF
+	    -DBUILD_TESTING=OFF
 )
 
 vcpkg_install_cmake()

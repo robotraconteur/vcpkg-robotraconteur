@@ -1,0 +1,14 @@
+{
+    "name": "robotraconteur-companion",
+    "version-semver": "0.2.0",
+    "homepage": "https://github.com/robotraconteur/robotraconteur_companion",
+    "dependencies": [
+        "robotraconteur",
+        "yaml-cpp",
+        "eigen3",
+        {
+            "name": "vcpkg-cmake",
+            "host": true
+        }
+    ]
+}

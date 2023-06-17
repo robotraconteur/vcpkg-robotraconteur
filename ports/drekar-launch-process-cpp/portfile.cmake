@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO johnwason/drekar-launch-process-cpp
-    REF ef0847b1b68eb872960cd2429dbb7d61b96a4977
-    SHA512 3a0c7b591c8f4dac14d94114973afebba5b9ec6745aa9a7a264f628d6a9fbf41cb509dc881ff1b0c03b7a6d44cd422b329fbec8be59235db792c42aeb72476b4
+    REF v0.1.0
+    SHA512 5f2d9e9c8a6f9e2884441fdc6369441d5ad0e13c40412fc8f64043ba614b0abc86e34405dd75e8ea7760e5ca7a2c1457ef52c5b082db16645f7158f74a56872e
     HEAD_REF master
 )
 

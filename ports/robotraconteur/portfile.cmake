@@ -23,13 +23,8 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 
-#vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/robotraconteur")
+vcpkg_copy_tools(TOOL_NAMES RobotRaconteurGen AUTO_CLEAN)
 
-if(CMAKE_HOST_WIN32)
-file(INSTALL ${CURRENT_PACKAGES_DIR}/bin/RobotRaconteurGen.exe DESTINATION ${CURRENT_PACKAGES_DIR}/tools/robotraconteur)
-else()
-file(INSTALL ${CURRENT_PACKAGES_DIR}/bin/RobotRaconteurGen DESTINATION ${CURRENT_PACKAGES_DIR}/tools/robotraconteur)
-endif()
 vcpkg_copy_tool_dependencies(${CURRENT_PACKAGES_DIR}/tools/robotraconteur)
 
 vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/RobotRaconteur")

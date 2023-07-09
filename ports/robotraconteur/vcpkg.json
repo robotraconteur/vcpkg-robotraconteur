@@ -1,6 +1,6 @@
 {
     "name": "robotraconteur",
-    "version-semver": "0.16.0",
+    "version-semver": "0.17.0",
     "homepage": "http://robotraconteur.com",
     "description": "The Robot Raconteur communication framework core library",
     "dependencies": [

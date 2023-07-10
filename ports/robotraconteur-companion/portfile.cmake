@@ -1,16 +1,16 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO robotraconteur/robotraconteur_companion
-    REF v0.2.0
-    SHA512 68c76bdecc784a6087135fd96ed88de4a0588f67b1561e6f3b59cd9ee5045ba57dde6078fdf91b6df7c1278e2b92c1233ac5a88cfb2b3dacea233e533235e5c1
+    REF v0.3.0
+    SHA512 6ac59b8a9aa81a34649cd600a5ddb2fcfaecbf2cc28dc5a86391e3876bd9678d85b4f34deded438a20c8affc0631aa540bd99c1366f9e13f7c88216066fd930d
     HEAD_REF master
 )
 
 vcpkg_from_github(
     OUT_SOURCE_PATH ROBDEF_SOURCE_PATH
-    REPO robotraconteur/robotraconteur_standard_robdef
-    REF group1-v1
-    SHA512 84724717e57c6e7ceefa957a8d94ee68db189e9a114564662d37b16a307735feea2a01c5622140118f537e6c084437d4bf11d0eb1e015b475fb3b636ed5009aa
+    REPO robotraconteur/robotraconteur_companion
+    REF v0.3.0
+    SHA512 6ac59b8a9aa81a34649cd600a5ddb2fcfaecbf2cc28dc5a86391e3876bd9678d85b4f34deded438a20c8affc0631aa540bd99c1366f9e13f7c88216066fd930d
     HEAD_REF master
 )
 

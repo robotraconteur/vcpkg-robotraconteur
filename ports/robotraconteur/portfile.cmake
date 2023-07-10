@@ -6,8 +6,8 @@ endif()
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
 	REPO robotraconteur/robotraconteur
-	REF v0.16.0
-	SHA512 70395dd4e2f605051b39e934cba3c126941561d26d017dc6cd3e721aa7e17dc5a56944f3e69509d3ab6eeaf1fc5e379107c74a86e279da9fb653d48bf73e454f
+	REF v0.17.0
+	SHA512 74eb1a45179035e734427d486fca214cfe8da709eff1f92266eb95a9b7095d03742f8cc030010ee29274a937b927d66df9131ce3c9fe15ecd35ca46c7a2a5268
 	HEAD_REF master
 	PATCHES
 		static-build.patch
@@ -23,13 +23,8 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 
-#vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/robotraconteur")
+vcpkg_copy_tools(TOOL_NAMES RobotRaconteurGen AUTO_CLEAN)
 
-if(CMAKE_HOST_WIN32)
-file(INSTALL ${CURRENT_PACKAGES_DIR}/bin/RobotRaconteurGen.exe DESTINATION ${CURRENT_PACKAGES_DIR}/tools/robotraconteur)
-else()
-file(INSTALL ${CURRENT_PACKAGES_DIR}/bin/RobotRaconteurGen DESTINATION ${CURRENT_PACKAGES_DIR}/tools/robotraconteur)
-endif()
 vcpkg_copy_tool_dependencies(${CURRENT_PACKAGES_DIR}/tools/robotraconteur)
 
 vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/RobotRaconteur")

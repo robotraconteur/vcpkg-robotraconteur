@@ -1,0 +1,16 @@
+{
+    "default": {
+        "robotraconteur": {
+            "baseline": "0.17.0",
+            "port-version": 0
+        },
+        "robotraconteur-companion": {
+            "baseline": "0.3.0",
+            "port-version": 0
+        },
+        "drekar-launch-process-cpp": {
+            "baseline": "0.1.0",
+            "port-version": 0
+        }
+    }
+}

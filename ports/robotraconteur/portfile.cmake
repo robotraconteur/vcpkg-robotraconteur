@@ -11,6 +11,7 @@ vcpkg_from_github(
 	HEAD_REF master
 	PATCHES
 		static-build.patch
+		0001-boost-optional-io-include.patch
 )
 
 vcpkg_cmake_configure(

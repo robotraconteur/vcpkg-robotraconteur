@@ -1,6 +1,6 @@
 {
     "name": "robotraconteur-companion",
-    "version-semver": "0.3.0",
+    "version-semver": "0.3.1",
     "homepage": "https://github.com/robotraconteur/robotraconteur_companion",
     "dependencies": [
         "robotraconteur",

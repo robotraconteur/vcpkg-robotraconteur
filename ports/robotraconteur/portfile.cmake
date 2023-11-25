@@ -1,8 +1,3 @@
-if(MSVC)
-set(VCPKG_CXX_FLAGS_DEBUG "${VCPKG_CXX_FLAGS_DEBUG} /bigobj")
-set(VCPKG_C_FLAGS_DEBUG "${VCPKG_C_FLAGS_DEBUG} /bigobj")
-endif()
-
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
 	REPO robotraconteur/robotraconteur
@@ -18,7 +13,6 @@ vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
 	OPTIONS
 	    -DBUILD_GEN=ON
-	    -DBUILD_SHARED_LIBS=OFF
 	    -DBUILD_TESTING=OFF
 )
 
@@ -32,8 +26,6 @@ vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/RobotRaconteur")
 
 vcpkg_copy_pdbs()
 
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin/)
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/bin)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
 

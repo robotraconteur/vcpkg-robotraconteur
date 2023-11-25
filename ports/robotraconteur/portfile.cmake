@@ -4,9 +4,6 @@ vcpkg_from_github(
 	REF v0.18.1
 	SHA512 bf8c7b636e9b49cd88b6992b36a50da24013bb930275aeb45a3812adbb366e77c0bcf804c60a6ddd75eeb614546f44383061883b285a2af869e659b4c03090f5
 	HEAD_REF master
-	PATCHES
-		static-build.patch
-		0001-boost-optional-io-include.patch
 )
 
 vcpkg_cmake_configure(

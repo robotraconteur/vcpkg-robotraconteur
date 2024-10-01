@@ -5,6 +5,8 @@ import urllib
 import urllib.request
 import hashlib
 import os
+import tempfile
+import subprocess
 
 
 def main():
@@ -70,8 +72,20 @@ def main():
     with open(f"ports/{port_name}/portfile.cmake", "w") as f:
         f.write(portfile4)
 
+    # Update registry
 
+    cwd = Path.cwd().absolute()
 
+    with tempfile.TemporaryDirectory() as vcpkg_tmpdir:
+        print(f"vcpkg_tempdir: {vcpkg_tmpdir}")
+        subprocess.check_call(["git", "clone", "--depth=1", "https://github.com/microsoft/vcpkg.git", "."], cwd=vcpkg_tmpdir)
+        subprocess.check_call(["bootstrap-vcpkg"], cwd=vcpkg_tmpdir, shell=True)
+        subprocess.check_call(["vcpkg", f"--x-builtin-ports-root={str(cwd / "ports")}", 
+                               f"--x-builtin-registry_versions-dir={str(cwd / "versions")}", "x-add-version", "--all", "--verbose"], cwd=vcpkg_tmpdir)
+        # format the registry
+        for port in Path("ports").iterdir():
+            if port.is_dir():
+                subprocess.check_call(["vcpkg", "format-port", str(port.absolute())], cwd=vcpkg_tmpdir)
 
 if __name__ == "__main__":
     main()

@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v4
+    - name: Set up git
+      run: |
+        git config --global user.email "wasontech-bot@noreply.github.com"
+        git config --global user.name "wasontech-bot"
     - name: Update Port
       run: python3 scripts/update_port.py
       env:

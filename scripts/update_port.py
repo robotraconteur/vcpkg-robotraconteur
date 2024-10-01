@@ -80,19 +80,19 @@ def main():
         print(f"vcpkg_tempdir: {vcpkg_tmpdir}")
         subprocess.check_call(["git", "clone", "--depth=1", "https://github.com/microsoft/vcpkg.git", "."], cwd=vcpkg_tmpdir)
         subprocess.check_call([vcpkg_tmpdir + '/bootstrap-vcpkg.sh'], cwd=vcpkg_tmpdir, shell=True)
-        subprocess.check_call([vcpkg_tmpdir + '/vcpkg', f"--x-builtin-ports-root={str(cwd / 'ports')}",
-                               f"--x-builtin-registry-versions-dir={str(cwd / 'versions')}", "x-add-version", port_name, "--verbose"], cwd=vcpkg_tmpdir)
+ #       subprocess.check_call([vcpkg_tmpdir + '/vcpkg', f"--x-builtin-ports-root={str(cwd / 'ports')}",
+ #                              f"--x-builtin-registry-versions-dir={str(cwd / 'versions')}", "x-add-version", port_name, "--verbose"], cwd=vcpkg_tmpdir)
         # format the registry
         for port in Path("ports").iterdir():
             if port.is_dir():
 
                 subprocess.check_call([vcpkg_tmpdir + "/vcpkg", "format-manifest", str(port.absolute()) + "/vcpkg.json"], cwd=vcpkg_tmpdir)
-        subprocess.check_call(["git", "add", "ports", "versions"], cwd=vcpkg_tmpdir)
-        subprocess.check_call(["git", "commit", "-m", f"Update {port_name} to {tag_name}"], cwd=vcpkg_tmpdir)
+        subprocess.check_call(["git", "add", "ports", "versions"], cwd=cwd)
+        subprocess.check_call(["git", "commit", "-m", f"Update {port_name} to {tag_name}"], cwd=cwd)
         subprocess.check_call([vcpkg_tmpdir + '/vcpkg', f"--x-builtin-ports-root={str(cwd / 'ports')}", 
                                f"--x-builtin-registry-versions-dir={str(cwd / 'versions')}", "x-add-version", "--all", "--verbose"], cwd=vcpkg_tmpdir)
-        subprocess.check_call(["git", "add", "ports", "versions"], cwd=vcpkg_tmpdir)
-        subprocess.check_call(["git", "commit", "-m", f"version database"], cwd=vcpkg_tmpdir)
+        subprocess.check_call(["git", "add", "ports", "versions"], cwd=cwd)
+        subprocess.check_call(["git", "commit", "-m", f"version database"], cwd=cwd)
 
 if __name__ == "__main__":
     main()

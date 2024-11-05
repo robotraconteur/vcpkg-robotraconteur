@@ -29,7 +29,7 @@ jobs:
         INPUT_PORT: ${{ github.event.inputs.port }}
         INPUT_SOURCE_REPOSITORY: ${{ github.event.inputs.source_repository }}
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v7
       with:
         title: Update port ${{ github.event.inputs.port }} to ${{ github.event.inputs.source_repository }} ${{ github.event.inputs.tag_name }}
         token: ${{ secrets.BOT_GITHUB_TOKEN }}

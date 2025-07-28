@@ -8,9 +8,9 @@ vcpkg_from_github(
 
 vcpkg_from_github(
     OUT_SOURCE_PATH ROBDEF_SOURCE_PATH
-    REPO robotraconteur/robotraconteur_standard_robdef
-    REF group1-v1
-    SHA512 84724717e57c6e7ceefa957a8d94ee68db189e9a114564662d37b16a307735feea2a01c5622140118f537e6c084437d4bf11d0eb1e015b475fb3b636ed5009aa
+    REPO robotraconteur/robotraconteur_companion
+    REF v0.4.2
+    SHA512 8bee3f71f6f1cedc6af9b30d32ed16515c2c117a4d43c3b6304c799fe90447056c5e447f573c96018c57112d9c174de422c16eba3a27b5c1343e88377d7e4117
     HEAD_REF master
 )
 

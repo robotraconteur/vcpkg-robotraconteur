@@ -37,7 +37,7 @@ jobs:
     - name: build robotraconteur
       run: ./vcpkg install --clean-after-build --overlay-ports=../vcpkg-robotraconteur/ports robotraconteur robotraconteur-companion
       working-directory: vcpkg
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: always()
       with:
         name: logs-${{ matrix.os }}
@@ -60,7 +60,7 @@ jobs:
     - name: build robotraconteur
       run: vcpkg install --clean-after-build --triplet x64-windows --overlay-ports=../vcpkg-robotraconteur/ports robotraconteur robotraconteur-companion
       working-directory: vcpkg
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: always()
       with:
         name: logs-win
@@ -83,7 +83,7 @@ jobs:
     - name: build robotraconteur
       run: ./vcpkg install --clean-after-build --overlay-ports=../vcpkg-robotraconteur/ports robotraconteur robotraconteur-companion
       working-directory: vcpkg
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: always()
       with:
         name: logs-osx

@@ -30,7 +30,10 @@ jobs:
       run: sudo apt update
     - name: apt
       run: >
-        sudo apt install zip unzip build-essential pkg-config libdbus-1-dev libbluetooth-dev libusb-1.0-0-dev libxtst-dev libxrandr-dev libltdl-dev -qq
+        sudo apt install zip unzip build-essential pkg-config libdbus-1-dev libbluetooth-dev 
+        libusb-1.0-0-dev libxtst-dev libxrandr-dev libltdl-dev
+        autoconf autoconf-archive automake libtoolize
+        -qq
     - name: bootstrap vcpkg
       run: ./bootstrap-vcpkg.sh
       working-directory: vcpkg
